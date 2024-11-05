@@ -1,2 +1,2 @@
 # ESOSE
-App for EMU Survey Object Search Engine (ESOSE)
+ESOSE is 'EMU Survey Object Search Engine'
