@@ -161,15 +161,15 @@ if 'sb_ra_dec' in locals():
     
     st.dataframe(df, use_container_width=True, hide_index=False)
     # Add download button for the dataframe
-    #csv = df.to_csv(index=False)
-    #st.download_button(
-    #    label="Download table as CSV",
-    #    data=csv,
-    #    file_name="similar_sources.csv",
-    #    mime="text/csv",
-    #    use_container_width=True,
-    #    on_click=None
-    #)
+    csv = df.to_csv(index=False)
+    st.download_button(
+        label="Download table as CSV",
+        data=csv,
+        file_name="similar_sources.csv",
+        mime="text/csv",
+        use_container_width=True,
+        on_click=None
+    )
 
     st.markdown("""
     ### View Images in Aladin Portal
