@@ -42,18 +42,20 @@ with col2:
 #col1, col2, col3 = st.columns([1,2,1])
 #with col2:
 st.markdown("""
-            <h1 style='text-align: center; margin-bottom: 0;'>ESOSE</h1>
-            """, unsafe_allow_html=True)
-
-st.markdown("""
-            <h2 style='text-align: center; font-size: 1.5em; margin-top: 0; color: #666;'>
-            EMU Survey Object Search Engine
-            </h2>
-            <p style='text-align: center; font-size: 1.1em; margin-bottom: 2em;'>
-            Welcome to ESOSE - a powerful search tool for the ASKAP's EMU Survey. Find similar radio objects using either 
-            text descriptions or by uploading reference images. The app uses advanced AI tools to match your queries with 
-            objects in the EMU Survey database.
-            </p>
+            <div style='text-align: center;'>
+                <h1 style='color: #2E4053; margin-bottom: 0; font-size: 3em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);'>
+                    ESOSE
+                </h1>
+                <h2 style='color: #566573; font-size: 1.5em; margin-top: 0; font-weight: 400;'>
+                    EMU Survey Object Search Engine
+                </h2>
+                <div style='max-width: 800px; margin: 0; line-height: 1.6; color: #34495E; font-size: 1.1em;'>
+                    Welcome to ESOSE – a powerful search tool for the EMU Survey conducted with the ASKAP telescope.
+                    The app leverages advanced AI tools to match your queries with objects in the EMU Survey database.
+                    Find similar radio objects by using either text descriptions or uploading reference images.
+                    <br><br>
+                </div>
+            </div>
             """, unsafe_allow_html=True)
 
 
@@ -64,7 +66,7 @@ def load_model_and_data():
     
     model_url =  f'https://drive.google.com/uc?id=1e1O-5774mkoGYZYC1gsXiGqDeu7KtOGs'
     model_file = 'epoch_99.pt'
-    gdown.download(model_url, model_file, quiet=False)
+    #gdown.download(model_url, model_file, quiet=False)
     checkpoint = torch.load(model_file, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['state_dict'])
     
@@ -72,12 +74,12 @@ def load_model_and_data():
     
     feature_url =  f'https://drive.google.com/uc?id=1ihgHSS043G60ozg6v32rYUJJFx1uqs_H'
     feature_file = 'all_sbid_image_features.pt'
-    gdown.download(feature_url, feature_file, quiet=False)
+    #gdown.download(feature_url, feature_file, quiet=False)
     all_image_features = torch.load(feature_file)
 
     idx_url =  f'https://drive.google.com/uc?id=1o-JWXmfUN1F6VMO6Lq-5U69qLDpyEMQ-'
     idx_file = 'allidx_sbid_ra_dec.pkl'
-    gdown.download(idx_url, idx_file, quiet=False)
+    #gdown.download(idx_url, idx_file, quiet=False)
     idx_dict = pd.read_pickle(idx_url)
     return model, preprocess, tokenizer, all_image_features, idx_dict
 
@@ -157,7 +159,17 @@ if 'sb_ra_dec' in locals():
         new_row = pd.DataFrame({'SBID': [sb_id], 'RA': [f'{ra:.5f}'], 'Dec': [f'{dec:.5f}'], 'Probability': [f'{prob:.2f}']})
         df = pd.concat([df, new_row], ignore_index=True)
     
-    st.dataframe(df, use_container_width=True)
+    st.dataframe(df, use_container_width=True, hide_index=False)
+    # Add download button for the dataframe
+    #csv = df.to_csv(index=False)
+    #st.download_button(
+    #    label="Download table as CSV",
+    #    data=csv,
+    #    file_name="similar_sources.csv",
+    #    mime="text/csv",
+    #    use_container_width=True,
+    #    on_click=None
+    #)
 
     st.markdown("""
     ### View Images in Aladin Portal
