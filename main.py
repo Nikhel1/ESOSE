@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from astropy.coordinates import SkyCoord
 import astropy.units as u
+import gdown
 
 # Set page configuration
 st.set_page_config(
