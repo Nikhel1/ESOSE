@@ -1,7 +1,0 @@
-streamlit
-torch
-Pillow
-open_clip_torch
-numpy
-pandas
-astropy
