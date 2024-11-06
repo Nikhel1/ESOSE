@@ -50,7 +50,7 @@ st.markdown("""
             EMU Survey Object Search Engine
             </h2>
             <p style='text-align: center; font-size: 1.1em; margin-bottom: 2em;'>
-            Welcome to ESOSE - a powerful search tool for the ASKAP EMU Survey. Find similar radio objects using either 
+            Welcome to ESOSE - a powerful search tool for the ASKAP's EMU Survey. Find similar radio objects using either 
             text descriptions or by uploading reference images. The app uses advanced AI tools to match your queries with 
             objects in the EMU Survey database.
             </p>
