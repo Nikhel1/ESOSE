@@ -96,7 +96,7 @@ remove_galactic = st.sidebar.checkbox("Remove galactic sources", value=True)
 above_prob_of = st.sidebar.slider("Minimum probability", 0.0, 1.0, 0.9, 0.01)
 top_n = st.sidebar.slider("Number of top results to display", 1, 5000, 200)
 
-st.sidebar.markdown("<br>", unsafe_allow_html=True)
+st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
 with st.sidebar.expander("📖 How to Use ESOSE"):
     st.markdown("""
     ### Search Methods
