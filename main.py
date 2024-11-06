@@ -46,10 +46,19 @@ st.markdown("<h1 style='text-align: center;'>EMU Survey Object Search Engine</h1
 @st.cache_resource
 def load_model_and_data():
     model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion2b_s34b_b79k', cache_dir='./clip_pretrained/')
-    checkpoint = torch.load('epoch_99.pt', map_location=torch.device('cpu'))
+    
+    model_url =  f'https://drive.google.com/uc?id=1e1O-5774mkoGYZYC1gsXiGqDeu7KtOGs'
+    model_file = 'epoch_99.pt'
+    gdown.download(model_url, model_file, quiet=False)
+    checkpoint = torch.load(model_file, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['state_dict'])
+    
     tokenizer = open_clip.get_tokenizer('ViT-B-32')
-    all_image_features = torch.load('all_sbid_image_features.pt')
+    
+    feature_url =  f'https://drive.google.com/uc?id=1ihgHSS043G60ozg6v32rYUJJFx1uqs_H'
+    feature_file = 'all_sbid_image_features.pt'
+    gdown.download(feature_url, feature_file, quiet=False)
+    all_image_features = torch.load(feature_file)
     idx_dict = pd.read_pickle(r'allidx_sbid_ra_dec.pkl')
     return model, preprocess, tokenizer, all_image_features, idx_dict
 
