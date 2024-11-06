@@ -5,3 +5,4 @@ open_clip_torch
 numpy
 pandas
 astropy
+gdown
