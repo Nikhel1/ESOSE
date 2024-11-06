@@ -66,7 +66,7 @@ def load_model_and_data():
     
     model_url =  f'https://drive.google.com/uc?id=1e1O-5774mkoGYZYC1gsXiGqDeu7KtOGs'
     model_file = 'epoch_99.pt'
-    #gdown.download(model_url, model_file, quiet=False)
+    gdown.download(model_url, model_file, quiet=False)
     checkpoint = torch.load(model_file, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['state_dict'])
     
@@ -74,12 +74,12 @@ def load_model_and_data():
     
     feature_url =  f'https://drive.google.com/uc?id=1ihgHSS043G60ozg6v32rYUJJFx1uqs_H'
     feature_file = 'all_sbid_image_features.pt'
-    #gdown.download(feature_url, feature_file, quiet=False)
+    gdown.download(feature_url, feature_file, quiet=False)
     all_image_features = torch.load(feature_file)
 
     idx_url =  f'https://drive.google.com/uc?id=1o-JWXmfUN1F6VMO6Lq-5U69qLDpyEMQ-'
     idx_file = 'allidx_sbid_ra_dec.pkl'
-    #gdown.download(idx_url, idx_file, quiet=False)
+    gdown.download(idx_url, idx_file, quiet=False)
     idx_dict = pd.read_pickle(idx_url)
     return model, preprocess, tokenizer, all_image_features, idx_dict
 
