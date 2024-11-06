@@ -93,7 +93,7 @@ input_option = st.sidebar.radio("Choose input type:", ("Image","Text"))
 remove_galactic = st.sidebar.checkbox("Remove galactic sources", value=True)
 
 above_prob_of = st.sidebar.slider("Minimum probability", 0.0, 1.0, 0.9, 0.01)
-top_n = st.sidebar.slider("Number of top results to display", 1, 1000, 50)
+top_n = st.sidebar.slider("Number of top results to display", 1, 100000, 5000)
 
 if input_option == "Text":
     search_for = st.text_input("Enter object to search for:", "A bent tailed radio galaxy")
