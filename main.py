@@ -66,7 +66,7 @@ def load_model_and_data():
     
     model_url =  f'https://drive.google.com/uc?id=1e1O-5774mkoGYZYC1gsXiGqDeu7KtOGs'
     model_file = 'epoch_99.pt'
-    gdown.download(model_url, model_file, quiet=False)
+    #gdown.download(model_url, model_file, quiet=False)
     checkpoint = torch.load(model_file, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['state_dict'])
     
@@ -74,12 +74,12 @@ def load_model_and_data():
     
     feature_url =  f'https://drive.google.com/uc?id=1ihgHSS043G60ozg6v32rYUJJFx1uqs_H'
     feature_file = 'all_sbid_image_features.pt'
-    gdown.download(feature_url, feature_file, quiet=False)
+    #gdown.download(feature_url, feature_file, quiet=False)
     all_image_features = torch.load(feature_file)
 
     idx_url =  f'https://drive.google.com/uc?id=1o-JWXmfUN1F6VMO6Lq-5U69qLDpyEMQ-'
     idx_file = 'allidx_sbid_ra_dec.pkl'
-    gdown.download(idx_url, idx_file, quiet=False)
+    #gdown.download(idx_url, idx_file, quiet=False)
     idx_dict = pd.read_pickle(idx_url)
     return model, preprocess, tokenizer, all_image_features, idx_dict
 
@@ -93,7 +93,7 @@ input_option = st.sidebar.radio("Choose input type:", ("Image","Text"))
 remove_galactic = st.sidebar.checkbox("Remove galactic sources", value=True)
 
 above_prob_of = st.sidebar.slider("Minimum probability", 0.0, 1.0, 0.9, 0.01)
-top_n = st.sidebar.slider("Number of top results to display", 1, 100000, 5000)
+top_n = st.sidebar.slider("Number of top results to display", 1, 5000, 200)
 
 if input_option == "Text":
     search_for = st.text_input("Enter object to search for:", "A bent tailed radio galaxy")
@@ -146,6 +146,8 @@ if 'sb_ra_dec' in locals():
         filtered_sb_ra_dec = sb_ra_dec
 
     st.success(f"Found {len(filtered_sb_ra_dec)} sources {'outside galactic regions ' if remove_galactic else ''}above probability of {above_prob_of}.")
+    if len(filtered_sb_ra_dec)<top_n:
+        top_n = len(filtered_sb_ra_dec)
     st.subheader(f"Top {top_n} similar sources:")
     
     df = pd.DataFrame(columns=['SBID', 'RA', 'Dec', 'Probability'])
