@@ -41,7 +41,21 @@ with col2:
 
 #col1, col2, col3 = st.columns([1,2,1])
 #with col2:
-st.markdown("<h1 style='text-align: center;'>EMU Survey Object Search Engine</h1>", unsafe_allow_html=True)
+st.markdown("""
+            <h1 style='text-align: center; margin-bottom: 0;'>ESOSE</h1>
+            """, unsafe_allow_html=True)
+
+st.markdown("""
+            <h2 style='text-align: center; font-size: 1.5em; margin-top: 0; color: #666;'>
+            EMU Survey Object Search Engine
+            </h2>
+            <p style='text-align: center; font-size: 1.1em; margin-bottom: 2em;'>
+            Welcome to ESOSE - a powerful search tool for the ASKAP EMU Survey. Find similar radio objects using either 
+            text descriptions or by uploading reference images. The app uses advanced AI tools to match your queries with 
+            objects in the EMU Survey database.
+            </p>
+            """, unsafe_allow_html=True)
+
 
 # Load the model and data
 @st.cache_resource
@@ -60,7 +74,7 @@ def load_model_and_data():
     feature_file = 'all_sbid_image_features.pt'
     gdown.download(feature_url, feature_file, quiet=False)
     all_image_features = torch.load(feature_file)
-    
+
     idx_url =  f'https://drive.google.com/uc?id=1o-JWXmfUN1F6VMO6Lq-5U69qLDpyEMQ-'
     idx_file = 'allidx_sbid_ra_dec.pkl'
     gdown.download(idx_url, idx_file, quiet=False)
@@ -144,3 +158,11 @@ if 'sb_ra_dec' in locals():
         df = pd.concat([df, new_row], ignore_index=True)
     
     st.dataframe(df, use_container_width=True)
+
+    st.markdown("""
+    ### View Images in Aladin Portal
+    You can either download the above table as a CSV file or view these sources in detail using the [EMU Survey Aladin Portal](https://emu-survey.org/progress/aladin.html).
+    Simply copy the RA and Dec coordinates from the table above and enter them in the portal to visualize the source.
+    """)
+    
+    st.image("AladinDisplay.png", caption="Example of source visualization in Aladin Portal", use_column_width=True)
