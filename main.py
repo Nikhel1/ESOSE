@@ -50,7 +50,8 @@ st.markdown("""
                     EMU Survey Object Search Engine
                 </h2>
                 <div style='max-width: 800px; margin: 0; line-height: 1.6; color: #34495E; font-size: 1.1em;'>
-                    Welcome to ESOSE – a powerful search tool for the EMU Survey conducted with the ASKAP telescope.
+                    Welcome to ESOSE – a powerful search tool for the <a href="https://emu-survey.org/" target="_blank">EMU Survey</a> conducted with the 
+                    <a href="https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope" target="_blank">ASKAP telescope</a>.
                     The app leverages advanced AI tools to match your queries with objects in the EMU Survey database.
                     Find similar radio objects by using either text descriptions or uploading reference images.
                     <br><br>
@@ -94,6 +95,42 @@ remove_galactic = st.sidebar.checkbox("Remove galactic sources", value=True)
 
 above_prob_of = st.sidebar.slider("Minimum probability", 0.0, 1.0, 0.9, 0.01)
 top_n = st.sidebar.slider("Number of top results to display", 1, 5000, 200)
+
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
+with st.sidebar.expander("📖 How to Use ESOSE"):
+    st.markdown("""
+    ### Search Methods
+    
+    #### Text Search
+    - Select 'Text' from the sidebar options
+    - Enter a description of the astronomical object you're looking for (e.g., "A bent tailed radio galaxy")
+    - Click 'Search' to find matching objects from the EMU Survey
+    
+    #### Image Search  
+    - Select 'Image' from the sidebar options
+    - Upload a reference image (.jpg, .jpeg, or .png format). The image can just be the screenshot of 
+    your favorite radio source in EMU or any other survey
+    - Click 'Search' to find visually similar objects
+    
+    ### Search Parameters
+    
+    #### Remove Galactic Sources
+    - When checked, filters out objects within 10 degrees of the galactic plane
+    - Helps focus on extragalactic sources
+    - Recommended for most searches
+    
+    #### Minimum Probability
+    - Sets the confidence threshold for matches (0.0 to 1.0)
+    - Higher values (e.g., 0.9) give more precise but fewer results
+    - Lower values include more results but may be less accurate
+    
+    #### Number of Top Results
+    - Controls how many matching objects to display
+    - Range: 1 to 5000 results
+    - Default: 200 results
+    - Adjust based on your needs and search specificity
+    """)
+
 
 if input_option == "Text":
     search_for = st.text_input("Enter object to search for:", "A bent tailed radio galaxy")
