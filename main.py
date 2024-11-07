@@ -34,6 +34,15 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+# Customizing link preview with meta tags
+st.markdown("""
+    <meta property="og:title" content="ESOSE - EMU Survey Object Search Engine">
+    <meta property="og:description" content="A powerful search tool for the EMU Survey with AI-driven search by text or image.">
+    <meta property="og:image" content="https://github.com/Nikhel1/ESOSE/blob/main/askap-esose.png">
+    <meta property="og:url" content="https://askap-esose.streamlit.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    """, unsafe_allow_html=True)
+
 # Display EMU logo
 col1, col2, col3 = st.columns([1,2,1])
 with col2:
