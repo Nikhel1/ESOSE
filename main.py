@@ -212,8 +212,9 @@ if 'sb_ra_dec' in locals():
 
     st.markdown("""
     ### View Images in Aladin Portal
-    You can either download the above table as a CSV file or view these sources in detail using the [EMU Survey Aladin Portal](https://emu-survey.org/progress/aladin.html).
-    Simply copy the RA and Dec coordinates from the table above and enter them in the portal to visualize the source.
+    You can explore these sources in detail through the [EMU Survey Aladin Portal](https://emu-survey.org/progress/aladin.html). 
+    Just copy the RA and Dec coordinates from the table above and enter them into the portal to visualize the source. 
+    We are also working on adding a feature to display combined radio and infrared images for these RA and Dec positions directly within the app.
     """)
     
     st.image("AladinDisplay.png", caption="Example of source visualization in Aladin Portal", use_column_width=True)
