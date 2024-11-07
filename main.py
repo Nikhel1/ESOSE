@@ -219,9 +219,9 @@ if 'sb_ra_dec' in locals():
     
     st.image("AladinDisplay.png", caption="Example of source visualization in Aladin Portal", use_column_width=True)
 
-st.sidebar.markdown("<br>", unsafe_allow_html=True)
+#st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.markdown("""
-    <div style='text-align: right;'>
+    <div style='text-align: center;'>
         <p style='color: #34495E; font-size: 0.9em; margin-top: 20px;'>
             &copy; Nikhel Gupta | CSIRO
         </p>
