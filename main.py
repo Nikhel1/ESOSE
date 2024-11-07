@@ -19,17 +19,17 @@ st.set_page_config(
 st.markdown("""
     <style>
     .stApp {
-        max-width: 1200px;
+        max-width: auto;
         margin: 0 auto;
         font-family: Arial, sans-serif;
     }
     .stButton>button {
-        background-color: #4CAF50;
+        background-color: dark;
         color: white;
         font-weight: bold;
     }
     .stSlider>div>div>div>div {
-        background-color: #4CAF50;
+        background-color: dark;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -131,15 +131,6 @@ with st.sidebar.expander("📖 How to Use ESOSE"):
     - Adjust based on your needs and search specificity
     """)
 
-st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
-st.sidebar.markdown("""
-    <div style='text-align: center;'>
-        <p style='color: #34495E; font-size: 0.9em; margin-top: 20px;'>
-            &copy; Nikhel Gupta | CSIRO
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
 if input_option == "Text":
     search_for = st.text_input("Enter object to search for:", "A bent tailed radio galaxy")
     if st.button("Search", key="text_search"):
@@ -226,3 +217,12 @@ if 'sb_ra_dec' in locals():
     """)
     
     st.image("AladinDisplay.png", caption="Example of source visualization in Aladin Portal", use_column_width=True)
+
+#st.sidebar.markdown("<br>", unsafe_allow_html=True)
+st.sidebar.markdown("""
+    <div style='text-align: center;'>
+        <p style='color: #34495E; font-size: 0.9em; margin-top: 20px;'>
+            &copy; Nikhel Gupta | CSIRO
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
