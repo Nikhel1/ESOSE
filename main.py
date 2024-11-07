@@ -10,7 +10,7 @@ import gdown
 
 # Set page configuration
 st.set_page_config(
-    page_title="ASKAP EMU Object Search",
+    page_title="ESOSE - EMU Survey Object Search Engine",
     page_icon="🔭",
     layout="wide"
 )
