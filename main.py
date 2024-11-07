@@ -97,7 +97,7 @@ above_prob_of = st.sidebar.slider("Minimum probability", 0.0, 1.0, 0.9, 0.01)
 top_n = st.sidebar.slider("Number of top results to display", 1, 5000, 200)
 
 st.sidebar.markdown("<br><br><br>", unsafe_allow_html=True)
-with st.sidebar.expander("📖 How to Use ESOSE"):
+with st.sidebar.expander(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ℹ️ &nbsp;&nbsp; How to Use ESOSE"):
     st.markdown("""
     ### Search Methods
     
@@ -198,6 +198,7 @@ if 'sb_ra_dec' in locals():
         df = pd.concat([df, new_row], ignore_index=True)
     
     st.dataframe(df, use_container_width=True, hide_index=False)
+    
     # Add download button for the dataframe
     csv = df.to_csv(index=False)
     st.download_button(
