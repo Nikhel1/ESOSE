@@ -49,7 +49,7 @@ st.markdown("""
                 <h2 style='color: #566573; font-size: 1.5em; margin-top: 0; font-weight: 400;'>
                     EMU Survey Object Search Engine
                 </h2>
-                <div style='max-width: 800px; margin: 0; line-height: 1.6; color: #34495E; font-size: 1.1em;'>
+                <div style='text-align: center; margin: 0; line-height: 1.6; color: #34495E; font-size: 1.1em;'>
                     Welcome to ESOSE – a powerful search tool for the <a href="https://emu-survey.org/" target="_blank">EMU Survey</a> conducted with the 
                     <a href="https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope" target="_blank">ASKAP telescope</a>.
                     The app leverages advanced AI tools to match your queries with objects in the EMU Survey database.
