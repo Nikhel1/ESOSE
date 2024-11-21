@@ -1,20 +1,20 @@
-# ESOSE: EMU Survey Object Search Engine
+# EMUSE: Evolutionary Map of the Universe Search Engine
 
-Welcome to **ESOSE** (EMU Survey Object Search Engine), a powerful tool designed for exploring and identifying astronomical objects within the [EMU Survey](https://emu-survey.org/) conducted with the [ASKAP radio telescope](https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope). Leveraging a fine-tuned CLIP multimodal model and a feature-rich database from the ASKAP EMU survey, ESOSE enables fast and accurate search for radio sources using either text descriptions or reference images.
+Welcome to **EMUSE** (Evolutionary Map of the Universe Search Engine), a powerful tool designed for exploring and identifying astronomical objects within the [EMU Survey](https://emu-survey.org/) conducted with the [ASKAP radio telescope](https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope). Leveraging a fine-tuned CLIP multimodal model and a feature-rich database from the ASKAP EMU survey, ESOSE enables fast and accurate search for radio sources using either text descriptions or reference images.
 
 ## Features
 
-ESOSE provides two main search methods:
+EMUSE provides two main search methods:
 - **Text Search**: Enter descriptive text to find similar objects.
 - **Image Search**: Upload an image to find visually similar sources.
 
 You can also customize search parameters such as filtering out galactic sources, setting a minimum confidence threshold, and choosing the number of top results to display.
 
-![Example Image](askap-esose.png)
+![Example Image](askap-emuse.png)
 
 ## Demo
 
-The app is deployed and available to try out [here](https://askap-esose.streamlit.app/).
+The app is deployed and available to try out [here](https://askap-emuse.streamlit.app/).
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ Ensure you have Python installed on your system. The dependencies are listed in 
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/ESOSE.git
+   git clone https://github.com/your-username/EMUSE.git
    cd ESOSE
    ```
 
@@ -49,7 +49,7 @@ streamlit run main.py
 
 ## Using the App
 
-ESOSE offers flexible search methods and parameters to help you find the most relevant astronomical objects in the EMU survey.
+EMUSE offers flexible search methods and parameters to help you find the most relevant astronomical objects in the EMU survey.
 
 ### Search Methods
 
