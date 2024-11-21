@@ -1,6 +1,6 @@
 # EMUSE: Evolutionary Map of the Universe Search Engine
 
-Welcome to **EMUSE** (Evolutionary Map of the Universe Search Engine), a powerful tool designed for exploring and identifying astronomical objects within the [EMU Survey](https://emu-survey.org/) conducted with the [ASKAP radio telescope](https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope). Leveraging a fine-tuned CLIP multimodal model and a feature-rich database from the ASKAP EMU survey, ESOSE enables fast and accurate search for radio sources using either text descriptions or reference images.
+Welcome to **EMUSE** (Evolutionary Map of the Universe Search Engine), a powerful tool designed for exploring and identifying astronomical objects within the [EMU Survey](https://emu-survey.org/) conducted with the [ASKAP radio telescope](https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope). Leveraging a fine-tuned CLIP multimodal model and a feature-rich database from the ASKAP EMU survey, EMUSE enables fast and accurate search for radio sources using either text descriptions or reference images.
 
 ## Features
 
@@ -30,7 +30,7 @@ Ensure you have Python installed on your system. The dependencies are listed in 
 
    ```bash
    git clone https://github.com/your-username/EMUSE.git
-   cd ESOSE
+   cd EMUSE
    ```
 
 2. Install dependencies:
