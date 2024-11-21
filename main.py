@@ -10,7 +10,7 @@ import gdown
 
 # Set page configuration
 st.set_page_config(
-    page_title="ESOSE - EMU Survey Object Search Engine",
+    page_title="EMUSE - Evolutionary Map of the Universe Search Engine",
     page_icon="🔭",
     layout="wide"
 )
@@ -44,13 +44,13 @@ with col2:
 st.markdown("""
             <div style='text-align: center;'>
                 <h1 style='color: #2E4053; margin-bottom: 0; font-size: 3em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);'>
-                    ESOSE
+                    EMUSE
                 </h1>
                 <h2 style='color: #566573; font-size: 1.5em; margin-top: 0; font-weight: 400;'>
-                    EMU Survey Object Search Engine
+                    Evolutionary Map of the Universe Search Engine
                 </h2>
                 <div style='text-align: center; margin: 0; line-height: 1.6; color: #34495E; font-size: 1.1em;'>
-                    Welcome to ESOSE – a powerful search tool for the <a href="https://emu-survey.org/" target="_blank">EMU Survey</a> conducted with the 
+                    Welcome to EMUSE – a powerful search tool for the <a href="https://emu-survey.org/" target="_blank">EMU Survey</a> conducted with the 
                     <a href="https://www.csiro.au/en/about/facilities-collections/ATNF/ASKAP-radio-telescope" target="_blank">ASKAP telescope</a>.
                     The app leverages advanced AI tools to match your queries with objects in the EMU Survey database.
                     Find similar radio objects by using either text descriptions or uploading reference images.
@@ -97,7 +97,7 @@ above_prob_of = st.sidebar.slider("Minimum probability", 0.0, 1.0, 0.9, 0.01)
 top_n = st.sidebar.slider("Number of top results to display", 1, 5000, 200)
 
 st.sidebar.markdown("<br><br><br>", unsafe_allow_html=True)
-with st.sidebar.expander(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ℹ️ &nbsp;&nbsp; How to Use ESOSE"):
+with st.sidebar.expander(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ℹ️ &nbsp;&nbsp; How to Use EMUSE"):
     st.markdown("""
     ### Search Methods
     
