@@ -37,7 +37,7 @@ st.markdown("""
 # Display EMU logo
 col1, col2, col3 = st.columns([1,2,1])
 with col2:
-    st.image("emu.png", use_column_width=True)
+    st.image("emu.png", use_container_width=True)
 
 #col1, col2, col3 = st.columns([1,2,1])
 #with col2:
@@ -217,7 +217,7 @@ if 'sb_ra_dec' in locals():
     We are also working on adding a feature to display combined radio and infrared images for these RA and Dec positions directly within the app.
     """)
     
-    st.image("AladinDisplay.png", caption="Example of source visualization in Aladin Portal", use_column_width=True)
+    st.image("AladinDisplay.png", caption="Example of source visualization in Aladin Portal", use_container_width=True)
 
 #st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.markdown("""
